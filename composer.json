@@ -1,0 +1,16 @@
+{
+    "name": "slince/webapp",
+    "description": "Slince skeleton webapp",
+    "type": "project",
+    "require": {
+        "slince/slince": "*"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Tao",
+            "email": "taosikai@yeah.net"
+        }
+    ],
+    "minimum-stability": "dev"
+}
