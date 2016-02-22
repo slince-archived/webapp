@@ -3,7 +3,8 @@
     "description": "Slince skeleton webapp",
     "type": "project",
     "require": {
-        "slince/slince": "*"
+        "php": "~5.4",
+        "slince/slince": "dev-master@dev"
     },
     "license": "Apache-2.0",
     "authors": [
