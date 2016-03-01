@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "php": "~5.4",
-        "slince/slince": "dev-master@dev"
+        "slince/application": "dev-master@dev"
     },
     "autoload": {
         "psr-4": {
@@ -19,5 +19,8 @@
             "email": "taosikai@yeah.net"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin"
+    }
 }

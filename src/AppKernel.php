@@ -4,10 +4,10 @@ namespace App;
 use Slince\Application\Kernel;
 use Slince\Routing\RouteCollection;
 use Slince\Di\Container;
-use Slince\Application\EventStore;
 use Slince\Event\Dispatcher;
-use Slince\Application\Subscriber\CakeSubscriber;
 use Slince\Config\Config;
+use Slince\Application\EventStore;
+use Slince\Application\Subscriber\CakeSubscriber;
 
 class AppKernel extends Kernel
 {
