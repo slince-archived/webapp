@@ -2,9 +2,11 @@
 use Slince\Di\Container;
 use Slince\Routing\RouterFactory;
 use Slince\View\ServiceFactory;
-use Slince\Cache\FileCache;
 use Slince\Application\Kernel;
 use Slince\Di\Definition;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+use Monolog\Formatter\ChromePHPFormatter;
 
 return function (Container $container, Kernel $kernel) {
     //核心组件
@@ -21,8 +23,9 @@ return function (Container $container, Kernel $kernel) {
     $container->share('view', function(){
         return ServiceFactory::get('native');
     });
-    $container->share('cache', function (){
-        return new FileCache($path);
+    $container->share('log', function () use ($kernel) {
+        $handler = new StreamHandler($kernel->getRootPath() . 'tmp/logs/app.log');
+        return new Logger('app', [$handler]);
     });
     $container->setDefinition('cache', new Definition('\\Slince\\Cache\\FileCache', [
         $kernel->getRootPath() . 'tmp/cache'

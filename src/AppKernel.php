@@ -7,7 +7,10 @@ use Slince\Di\Container;
 use Slince\Event\Dispatcher;
 use Slince\Config\Config;
 use Slince\Application\EventStore;
+use Slince\Application\Subscriber\ErrorHandler;
 use Slince\Application\Subscriber\CakeSubscriber;
+use Slince\Application\Listener\MonologListener;
+use Slince\Application\Listener\WhoopsListener;
 
 class AppKernel extends Kernel
 {
@@ -33,9 +36,15 @@ class AppKernel extends Kernel
         call_user_func($callback, $container, $this);
     }
 
-    function registerSubscribers(Dispatcher $dispatcher)
+    function registerEvents(Dispatcher $dispatcher)
     {
         $dispatcher->addSubscriber(new CakeSubscriber());
+        $dispatcher->addListener(EventStore::KERNEL_INITED, new MonologListener());
+        if ($this->debug()) {
+            $dispatcher->addListener(EventStore::KERNEL_INITED, new WhoopsListener());
+        } else {
+            $dispatcher->addSubscriber(new ErrorHandler());
+        }
     }
     
     function registerRoutes(RouteCollection $routes)
