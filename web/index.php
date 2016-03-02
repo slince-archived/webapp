@@ -2,5 +2,5 @@
 use App\AppKernel;
 include __DIR__ . '/../config/bootstrap.php';
 
-$kernel = new AppKernel(true);
+$kernel = new AppKernel(false);
 $kernel->run();

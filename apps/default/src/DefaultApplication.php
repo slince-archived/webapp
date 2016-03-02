@@ -8,12 +8,10 @@ class DefaultApplication extends Application
 
     protected $name = 'Default';
 
+    protected $theme = false;
+
     function getRootPath()
     {
         return __DIR__ . '/../';
-    }
-    
-    function initlize()
-    {
     }
 }
