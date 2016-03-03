@@ -8,7 +8,7 @@ class DefaultApplication extends Application
 
     protected $name = 'Default';
 
-    protected $theme = false;
+    protected $theme = 'default';
 
     function getRootPath()
     {

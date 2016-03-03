@@ -11,7 +11,6 @@ class PagesController extends AppController
      */
     function index()
     {
-//         throw new NotFoundException('heheda');
-        trigger_error('hehe', E_USER_WARNING);
+        $this->render('index', true);
     }
 }
