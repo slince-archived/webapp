@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Acme Page</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="/media/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
     <meta name="generator" content="Windwalker Framework" />
         
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/default/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
         
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
