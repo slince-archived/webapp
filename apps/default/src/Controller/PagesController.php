@@ -1,6 +1,8 @@
 <?php
 namespace DefaultApplication\Controller;
 
+use Slince\Application\Exception\NotFoundException;
+
 class PagesController extends AppController
 {
 
@@ -9,8 +11,7 @@ class PagesController extends AppController
      */
     function index()
     {
-        echo 123;
-        throw new \Exception('heheda');
-//         trigger_error('hehe', E_USER_WARNING);
+//         throw new NotFoundException('heheda');
+        trigger_error('hehe', E_USER_WARNING);
     }
 }
