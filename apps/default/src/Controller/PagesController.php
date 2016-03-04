@@ -11,6 +11,5 @@ class PagesController extends AppController
      */
     function index()
     {
-        $this->render('index', true);
     }
 }
