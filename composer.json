@@ -19,8 +19,8 @@
             "email": "taosikai@yeah.net"
         }
     ],
-    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin"
-    }
+    },
+    "minimum-stability": "dev"
 }
