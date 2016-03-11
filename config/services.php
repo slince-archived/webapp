@@ -21,7 +21,12 @@ return function (Container $container, Kernel $kernel) {
         return RouterFactory::create();
     });
     $container->share('view', function(){
-        return ServiceFactory::get('native');
+        $viewManager = ServiceFactory::get('native');
+        $viewManager->registerHelperClasses([
+            'asset' => '\\Slince\\Application\\Helper\\AssetHelper',
+            'url' => '\\Slince\\Application\\Helper\\UrlHelper',
+        ]);
+        return $viewManager;
     });
     $container->share('log', function () use ($kernel) {
         $handler = new StreamHandler($kernel->getRootPath() . 'tmp/logs/app.log');
