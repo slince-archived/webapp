@@ -21,12 +21,12 @@ class AppKernel extends Kernel
     function registerBridges()
     {
         $bridges = [
-            new \Slince\Application\CakeBridge(),
-            new \Slince\Application\MonologBridge(),
+            new \Slince\CakeBridge\CakeBridge(),
+            new \Slince\MonologBridge\MonologBridge(),
         ];
         if ($this->debug()) {
             $bridges += [
-                new \Slince\Application\WhoopsBridge()
+                new \Slince\WhoopsBridge\WhoopsBridge()
             ];
         }
         return $bridges;
