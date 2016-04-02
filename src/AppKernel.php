@@ -25,9 +25,7 @@ class AppKernel extends Kernel
             new \Slince\MonologBridge\MonologBridge(),
         ];
         if ($this->debug()) {
-            $bridges += [
-                new \Slince\WhoopsBridge\WhoopsBridge()
-            ];
+            $bridges[] = new \Slince\WhoopsBridge\WhoopsBridge();
         }
         return $bridges;
     }
