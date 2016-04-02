@@ -3,7 +3,7 @@
     "description": "Slince skeleton webapp",
     "type": "project",
     "require": {
-        "php": "~5.4",
+        "php": ">=5.5.9",
         "slince/application": "dev-master@dev"
     },
     "autoload": {

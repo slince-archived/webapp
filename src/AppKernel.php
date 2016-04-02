@@ -6,50 +6,51 @@ use Slince\Routing\RouteCollection;
 use Slince\Di\Container;
 use Slince\Event\Dispatcher;
 use Slince\Config\Config;
-use Slince\Application\EventStore;
-use Slince\Application\Subscriber\ErrorHandler;
-use Slince\Application\Subscriber\CakeSubscriber;
-use Slince\Application\Listener\MonologListener;
-use Slince\Application\Listener\WhoopsListener;
 
 class AppKernel extends Kernel
 {
 
-    function getRootPath()
-    {
-        return __DIR__ . '/../';
-    }
-
     function registerApplications()
     {
-        $this->registerApplication(new \DefaultApplication\DefaultApplication());
+        $applications = [
+            new \DefaultApplication\DefaultApplication(),
+        ];
+        return $applications;
+    }
+
+    function registerBridges()
+    {
+        $bridges = [
+            new \Slince\Application\CakeBridge(),
+            new \Slince\Application\MonologBridge(),
+        ];
+        if ($this->debug()) {
+            $bridges += [
+                new \Slince\Application\WhoopsBridge()
+            ];
+        }
+        return $bridges;
     }
 
     function registerConfigs(Config $config)
     {
-        $config->load($this->getRootPath() . '/config/app.php');
+        $config->load($this->getConfigPath() . '/app.php');
     }
 
     function registerServices(Container $container)
     {
-        $callback = include $this->getRootPath() . 'config/services.php';
+        $callback = include $this->getConfigPath() . '/services.php';
         call_user_func($callback, $container, $this);
     }
 
     function registerEvents(Dispatcher $dispatcher)
     {
-        $dispatcher->addSubscriber(new CakeSubscriber());
-        $dispatcher->addListener(EventStore::KERNEL_INITED, new MonologListener());
-        if ($this->debug()) {
-            $dispatcher->addListener(EventStore::KERNEL_INITED, new WhoopsListener());
-        } else {
-            $dispatcher->addSubscriber(new ErrorHandler());
-        }
+        $dispatcher->addSubscriber(new \Slince\Application\ErrorHandler());
     }
-    
+
     function registerRoutes(RouteCollection $routes)
     {
-        $callback = include $this->getRootPath() . 'config/routes.php';
+        $callback = include $this->getConfigPath() . '/routes.php';
         call_user_func($callback, $routes);
     }
 }
