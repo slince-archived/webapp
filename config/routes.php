@@ -3,7 +3,6 @@
  * 路由配置
  */
 use Slince\Routing\RouteCollection;
-use Symfony\Component\HttpFoundation\Response;
 
 return function(RouteCollection $routes) {
     //网站首页

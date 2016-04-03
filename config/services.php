@@ -6,7 +6,6 @@ use Slince\Application\Kernel;
 use Slince\Di\Definition;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use Monolog\Formatter\ChromePHPFormatter;
 
 return function (Container $container, Kernel $kernel) {
     //核心组件
@@ -29,7 +28,7 @@ return function (Container $container, Kernel $kernel) {
         return $viewManager;
     });
     $container->share('log', function () use ($kernel) {
-        $handler = new StreamHandler($kernel->getRootPath() . 'tmp/logs/app.log');
+        $handler = new StreamHandler($kernel->getLogPath() . '/app.log');
         return new Logger('app', [$handler]);
     });
     $container->setDefinition('cache', new Definition('\\Slince\\Cache\\FileCache', [
