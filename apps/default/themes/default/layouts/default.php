@@ -5,7 +5,7 @@
     <title>Acme Page</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico" />
-    <meta name="generator" content="Windwalker Framework" />
+    <meta name="generator" content="Slince Framework" />
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?=$this->asset->url('css/main.css');?>"/>
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">
-                    <img src="https://cloud.githubusercontent.com/assets/1639206/2870854/176b987a-d2e4-11e3-8be6-9f70304a8499.png" alt="Windwalker LOGO" />
+                    <img src="/img/slince-logo.png" alt="Slince LOGO" />
                 </a>
             </div>
             <div class="collapse navbar-collapse">
