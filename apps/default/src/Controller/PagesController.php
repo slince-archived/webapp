@@ -1,8 +1,6 @@
 <?php
 namespace DefaultApplication\Controller;
 
-use Slince\Application\Exception\NotFoundException;
-
 class PagesController extends AppController
 {
 
@@ -11,5 +9,10 @@ class PagesController extends AppController
      */
     function index()
     {
+    }
+
+    function show()
+    {
+        
     }
 }
