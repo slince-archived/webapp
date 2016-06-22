@@ -2,6 +2,13 @@
     "name": "slince/webapp",
     "description": "Slince skeleton webapp",
     "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Tao",
+            "email": "taosikai@yeah.net"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "slince/slince": "*@dev"
@@ -12,13 +19,6 @@
             "DefaultApplication\\": "./apps/default/src"
         }
     },
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "Tao",
-            "email": "taosikai@yeah.net"
-        }
-    ],
     "config": {
         "bin-dir": "bin"
     },
