@@ -2,6 +2,7 @@
 namespace App;
 
 use Slince\Application\Kernel;
+use Slince\Routing\RouteBuilder;
 use Slince\Routing\RouteCollection;
 use Slince\Di\Container;
 use Slince\Event\Dispatcher;
@@ -46,7 +47,7 @@ class AppKernel extends Kernel
         $dispatcher->addSubscriber(new \Slince\Application\ErrorHandler());
     }
 
-    function registerRoutes(RouteCollection $routes)
+    function registerRoutes(RouteBuilder $routes)
     {
         $callback = include $this->getConfigPath() . '/routes.php';
         call_user_func($callback, $routes);

@@ -2,9 +2,9 @@
 /**
  * 路由配置
  */
-use Slince\Routing\RouteCollection;
+use Slince\Routing\RouteBuilder;
 
-return function(RouteCollection $routes) {
+return function(RouteBuilder $routes) {
     //网站首页
     $routes->http('/', 'Default@PagesController@index');
     //单页
